@@ -11,6 +11,12 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   final TextEditingController _usernameController = TextEditingController();
 
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    super.dispose();
+  }
+
   void _login() {
     if (_usernameController.text.trim().isNotEmpty) {
       Navigator.pushReplacement(

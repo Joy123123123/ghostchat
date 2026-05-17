@@ -12,6 +12,12 @@ class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController _msgController = TextEditingController();
   final List<Map<String, String>> _messages = [];
 
+  @override
+  void dispose() {
+    _msgController.dispose();
+    super.dispose();
+  }
+
   void _sendMessage() {
     if (_msgController.text.trim().isNotEmpty) {
       setState(() {
